@@ -52,15 +52,16 @@ credentials:
 #   1. existingX: ""           → chart creates "{Chart.Name}-mongodb-creds" / "-config"
 #                                 from the *Value fields below. Dev/test only.
 #   2. existingX: "<name>"     → chart references that resource. Required keys:
-#                                 Secret    → MC_MONGO_USER, MC_MONGO_PASSWORD
-#                                 ConfigMap → MC_MONGO_HOSTS, MC_MONGO_DATABASE,
-#                                             MC_MONGO_AUTH_SOURCE, MC_MONGO_REPLICA_SET
+#                                 Secret    → MC_MONGO_PASSWORD
+#                                 ConfigMap → MC_MONGO_USER, MC_MONGO_HOSTS,
+#                                             MC_MONGO_DATABASE, MC_MONGO_AUTH_SOURCE,
+#                                             MC_MONGO_REPLICA_SET
 mongodb:
   existingSecret: ""
-  userValue: ""
   passwordValue: ""
 
   existingConfigMap: ""
+  userValue: ""
   hostsValue: ""
   databaseValue: "meshcentral"
   authSourceValue: "admin"
