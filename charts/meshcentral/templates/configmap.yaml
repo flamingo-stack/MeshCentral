@@ -20,6 +20,7 @@ metadata:
   labels:
     {{- include "meshcentral.labels" . | nindent 4 }}
 data:
+  MC_MONGO_USER: {{ .Values.mongodb.userValue | quote }}
   MC_MONGO_HOSTS: {{ .Values.mongodb.hostsValue | quote }}
   MC_MONGO_DATABASE: {{ .Values.mongodb.databaseValue | quote }}
   MC_MONGO_AUTH_SOURCE: {{ .Values.mongodb.authSourceValue | quote }}
